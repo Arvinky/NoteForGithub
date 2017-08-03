@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://en.wikipedia.org/wiki/POSIX_Threads -->
+<html class="client-js ve-not-available translated-ltr" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>POSIX主题 - 维基百科</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"POSIX_Threads","wgTitle":"POSIX Threads","wgCurRevisionId":772239113,"wgRevisionId":772239113,"wgArticleId":634671,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["C POSIX library","Parallel computing","Threads (computing)"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"POSIX_Threads","wgRelevantArticleId":634671,"wgRequestId":"WYCUvApAEKoAAFYmtiYAAAAD","wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":false,"wgPopupsShouldSendModuleToUser":false,"wgPopupsConflictsWithNavPopupGadget":false,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q928112","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgVisualEditorUnsupportedEditParams":["preload","preloadparams","preloadtitle","undo","undoafter","veswitched"],"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.gadget.charinsert-styles":"ready","ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.pygments":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["ext.cite.a11y","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="./POSIX主题 - 维基百科_files/load.php">
+<script async="" src="./POSIX主题 - 维基百科_files/load(1).php"></script>
+<style>
+.cite-accessibility-label{ top:-99999px;clip:rect( 1px 1px 1px 1px ); clip:rect( 1px,1px,1px,1px ); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:0;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	.toc.tochidden,.toctoggle{display:none}}
+.mw-notification-area{position:absolute}.mw-notification-area-floating{position:fixed}.mw-notification-area{top:0;right:0; padding:1em;width:20em;line-height:1.35;z-index:10000; overflow:hidden}.mw-notification{padding:0.25em 1em;margin-bottom:0.5em;border:solid 1px #ddd;background-color:#fcfcfc; cursor:pointer;opacity:0;-webkit-transform:translateX( 35px );transform:translateX( 35px );-webkit-transition:opacity 0.35s ease-in-out,-webkit-transform 0.35s ease-in-out;transition:opacity 0.35s ease-in-out,transform 0.35s ease-in-out}.mw-notification-visible{opacity:1;-webkit-transform:translateX( 0 );transform:translateX( 0 )}.mw-notification-replaced{opacity:0;-webkit-transform:translateY( -35px );transform:translateY( -35px );pointer-events:none}.mw-notification-title{font-weight:bold}.mw-notification-type-warn{border-color:#f5be00; background-color:#ffffe8}.mw-notification-type-error{border-color:#eb3941; background-color:#fff8f8} .mw-notification-area{font-size:0.8em}.mw-notification-area-layout{top:7em}.mw-notification{background-color:#fff;padding:0.75em 1.5em;border:1px solid #a2a9b1;border-radius:2px;box-shadow:0 2px 2px 0 rgba(0,0,0,0.25)}.mw-notification-type-warn{border-color:#f5be00; }.mw-notification-type-error{border-color:#d33; }
+@media print {
+	.mw-notification-area{display:none}}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAACeklEQVR4Aa1UM3jkcRBN6qS//tTFttPHqmI359VZ5dm2L1zFtr02YlRx5sX2ft/7ed7O/w1M5ufnt8NZQjCBQXhG+IYZe5zjfju7xcHc3NzEzMwM6xOEqNnZ2ZeVlZW827dv1ycmJnbGx8d3Yr5582Z9eXk5D/d4h/empqYm+K0nw3yKcF4sFmdzOJzGgIAAhb29vc7Ozk6/Atrr/fz8lCwWq6m3tzcb72G3nmzFo/NNTU354eHhIltbW72Tk5M2IyND9P79+8ZPnz7VvXnzpoHBYPS4uLhobGxsDMHBwaLa2tp82MF+PVmUUqnMioiI6LOysjLQLCcPS2ZmZn7Ozc39oPtFYG80GgWpqakSS0tLY1hYmEgikWTBfoXsLD16BT3gUWhoqEKtVheREZ+Qu0IEjI+PZ2k0GqFer+cnJSWJra2tDWw2u2FqauoVeEAW3NzcnBcYGCh3dHTUtba2ltNjLvRJSEiQEQEPRENDQzkMBqPXwsKiXyqVFsFDNzc3LWmoqKmp4YIHZIyHDx9WOzg46GJiYmTk5e/h4eHstLQ0CX2ykXST4JPJ8y7sSVM5/QGMf9y4caMHf3r//v1a8IDsGRm04/D58+dtpNFPPNRqtflXrlzpI8G15IEGc2xsrFSlUglwD+Tk5NRBmuTk5A7wgOxbXFxcF8iysrIa1mskEolKvL29Ne7u7mpXV1dNaWlp9fr7X79+VYMMeQieY/dsv5p1r2g2Nja2vWZ7RXNiYuIA0dwlzwYGBjbkGXmURXeLeUa1ul2ebV8BEH+7CiAiASTYvgJ2qc3MzMzF2vz8+XPd27dvG5hMZg+CsV1tHmfXOP5+dqyddgHOI7v1srTdcwAAAABJRU5ErkJggg==);background:url(/w/extensions/CentralNotice/resources/subscribing/CloseWindow19x19.png?7596b)!ie;width:19px;height:19px;text-indent:19px;white-space:nowrap;overflow:hidden}
+.mw-ui-button{font-family:inherit;font-size:1em;display:inline-block;min-width:4em;max-width:28.75em;padding:0.546875em 1em;line-height:1.286;margin:0;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;*display:inline; zoom:1;vertical-align:middle;background-color:#f8f9fa;color:#222222;border:1px solid #a2a9b1;text-align:center;font-weight:bold;cursor:pointer}.mw-ui-button:visited{color:#222222}.mw-ui-button:hover{background-color:#ffffff;color:#444444;border-color:#a2a9b1}.mw-ui-button:focus{background-color:#ffffff;color:#222222;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button:active,.mw-ui-button.is-on,.mw-ui-button.mw-ui-checked{background-color:#d9d9d9;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background-color:#c8ccd1;color:#fff;box-shadow:none;border-color:#c8ccd1}.mw-ui-button:focus{outline-width:0}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not( :disabled ){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;-moz-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button:disabled{text-shadow:none;cursor:default}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}.mw-ui-button.mw-ui-progressive{background-color:#3366cc;color:#fff;border:1px solid #3366cc;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-progressive:hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-progressive.is-on,.mw-ui-button.mw-ui-progressive.mw-ui-checked{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked{color:#2a4b8d}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-destructive{background-color:#dd3333;color:#fff;border:1px solid #dd3333;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-destructive:hover{background-color:#ff4242;border-color:#ff4242}.mw-ui-button.mw-ui-destructive:focus{box-shadow:inset 0 0 0 1px #dd3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on,.mw-ui-button.mw-ui-destructive.mw-ui-checked{background-color:#b32424;border-color:#b32424;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active,.mw-ui-button.mw-ui-destructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#ff4242}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked{color:#b32424}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#dd3333}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet{background:transparent;border:0;text-shadow:none;color:#222222}.mw-ui-button.mw-ui-quiet:hover{background-color:transparent;color:#444444}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-checked{color:#000000}.mw-ui-button.mw-ui-quiet:focus{background-color:transparent;color:#222222}.mw-ui-button.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet:focus{box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet:disabled{background:transparent}input.mw-ui-button::-moz-focus-inner,button.mw-ui-button::-moz-focus-inner{margin-top:-1px;margin-bottom:-1px}a.mw-ui-button{text-decoration:none}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not( :first-child ){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{position:relative;line-height:1.5em;min-height:1.5em;min-width:1.5em}.mw-ui-icon.mw-ui-icon-element{text-indent:-999px;overflow:hidden;width:3.5em;min-width:3.5em;max-width:3.5em}.mw-ui-icon.mw-ui-icon-element:before{left:0;right:0;position:absolute;margin:0 1em}.mw-ui-icon.mw-ui-icon-before:before,.mw-ui-icon.mw-ui-icon-element:before{background-position:50% 50%;background-repeat:no-repeat;background-size:100% auto;float:left;display:block;min-height:1.5em;content:''}.mw-ui-icon.mw-ui-icon-before:before{position:relative;width:1.5em;margin-right:1em}.mw-ui-icon.mw-ui-icon-small:before{background-size:66.67% auto}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY( -20px )}100%{opacity:1;-webkit-transform:translateY( 0 )}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY( -20px )}100%{opacity:1;-moz-transform:translateY( 0 )}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY( -20px )}100%{opacity:1;-o-transform:translateY( 0 )}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY( -20px )}100%{opacity:1;transform:translateY( 0 )}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+.uls-menu{border-radius:4px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:4px;border-top-left-radius:4px}.uls-language-list{border-bottom-right-radius:4px;border-bottom-left-radius:4px} .uls-menu.callout .caret-before,.uls-menu.callout .caret-after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute}.uls-menu.callout .caret-after{display:inline-block}.uls-menu.callout .caret-right .caret-before,.uls-menu.callout .caret-right .caret-after{ border-left:10px solid #c9c9c9; right:-11px}.uls-menu.callout .caret-right .caret-after{ border-left:10px solid #fcfcfc; right:-10px}.uls-menu.callout--languageselection .caret-right .caret-after{ border-left:10px solid #fff}.uls-menu.callout .caret-left .caret-before,.uls-menu.callout .caret-left .caret-after{ border-right:10px solid #c9c9c9; left:-11px}.uls-menu.callout .caret-left .caret-after{ border-right:10px solid #fcfcfc; left:-10px}.uls-menu.callout--languageselection .caret-left .caret-after{ border-right:10px solid #fff}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.png?90e9b) no-repeat scroll center center;background-image:-webkit-linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20id%3D%22Layer_1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M7%2013.1l8.9%208.9c.8-.8.8-2%200-2.8l-6.1-6.1%206-6.1c.8-.8.8-2%200-2.8L7%2013.1z%22%20id%3D%22path3%22%20fill%3D%22%23555%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-size:28px;background-position:center center;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c9c9c9;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:10px;margin:0;z-index:5;padding:0}.referencetooltip li{border:#080086 2px solid;max-width:260px;padding:10px 8px 13px 8px;margin:0px;background-color:#F7F7F7;-webkit-box-shadow:2px 4px 2px rgba(0,0,0,0.3);-moz-box-shadow:2px 4px 2px rgba(0,0,0,0.3);box-shadow:2px 4px 2px rgba(0,0,0,0.3)}.referencetooltip li+li{margin-left:7px;margin-top:-2px;border:0;padding:0;height:3px;width:0px;background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-top:12px #080086 solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip>li+li::after{content:'';border-top:8px #F7F7F7 solid;border-right:5px transparent solid;border-left:5px transparent solid;margin-top:-12px;margin-left:-5px;z-index:1;height:0px;width:0px;display:block}.client-js body .referencetooltip li li{border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:auto;width:auto;margin:auto;padding:0;position:static}.RTflipped{padding-top:13px}.referencetooltip.RTflipped li+li{position:absolute;top:2px;border-top:0;border-bottom:12px #080086 solid}.referencetooltip.RTflipped li+li::after{border-top:0;border-bottom:8px #F7F7F7 solid;position:absolute;margin-top:7px}.RTsettings{float:right;height:24px;width:24px;cursor:pointer;background-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/0/05/OOjs_UI_icon_advanced.svg/24px-OOjs_UI_icon_advanced.svg.png);background-image:linear-gradient(transparent,transparent),url(//upload.wikimedia.org/wikipedia/commons/0/05/OOjs_UI_icon_advanced.svg);margin-top:-9px;margin-right:-7px;-webkit-transition:opacity 0.15s;-moz-transition:opacity 0.15s;-ms-transition:opacity 0.15s;-o-transition:opacity 0.15s;transition:opacity 0.15s;opacity:0.6;filter:alpha(opacity=60)}.RTsettings:hover{opacity:1;filter:alpha(opacity=100)}.RTTarget{border:#080086 2px solid}
+.skin-vector li.GA,.skin-monobook li.GA,.skin-modern li.GA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/4/42/Monobook-bullet-ga.png)} .skin-vector li.FA,.skin-monobook li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/d/d4/Monobook-bullet-star.png)}.skin-modern li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png)}
+.wp-teahouse-question-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}#wp-th-question-ask{float:right}.wp-teahouse-ask a.external{background-image:none !important}.wp-teahouse-respond-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}.wp-th-respond{float:right}.wp-teahouse-respond a.external{background-image:none !important}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;line-height:1.35;opacity:1;-webkit-transition:opacity 250ms;-moz-transition:opacity 250ms;transition:opacity 250ms}.postedit.mw-notification{padding-right:3em}.skin-monobook .postedit{top:6em !important; }.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 0.8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2}.postedit:hover .postedit-close{color:#000;text-decoration:none;opacity:0.4}
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22%2372777d%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M851.2%2071.6L690.7%20232.1l-40.1-40.3-9.6%20164.8%20164.8-9.3-40.3-40.4L926%20146.4l58.5%2058.5L997.6%200%20792.7%2013.1%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M769.6%2089.3H611.9l70.9%2070.8%207.9%207.5m-47.1%20234.6l-51.2%203%203-51.2%209.4-164.4%205.8-100.3H26.4V768h883.1V387l-100.9%205.8-165%209.4zM813.9%20678H113.6l207.2-270.2%2031.5-12.9L548%20599.8l105.9-63.2%20159.8%20140.8.2.6zm95.6-291.9V228l-79.1%2078.9%207.8%207.9%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A)}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M897%20454.6V313.4L810.4%20299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4%2050.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427%2085.6c-23.3%206.4-45.7%2016-65.8%2027.3l-71.4-50.5-100.3%2099.5%2050.5%2071.4c-11.2%2020.9-20.9%2042.5-27.3%2066.6L127%20313.4v141.2l85.8%2014.4c6.4%2023.3%2016%2045.7%2027.3%2066.6L189.6%20607l99.5%2099.5%2071.4-50.5c20.9%2011.2%2042.5%2020.9%2066.6%2027.3l14.4%2085.8h141.2l14.4-86.6c23.3-6.4%2045.7-16%2065.8-27.3l71.4%2050.5%2099.5-99.5-50.5-71.4c11.2-20.9%2020.9-42.5%2027.3-66.6l86.4-13.6zm-385%2077c-81.8%200-147.6-66.6-147.6-147.6%200-81.8%2066.6-147.6%20147.6-147.6S659.6%20302.2%20659.6%20384%20593.8%20531.6%20512%20531.6z%22%20fill%3D%22%2372777d%22%2F%3E%0A%3C%2Fsvg%3E%0A);opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before:hover{opacity:1}
+#uls-settings-block{border-top:1px solid #c9c9c9;background:#f8f8f8;background:-webkit-gradient( linear,left top,left bottom,from( #fbfbfb ),to( #f0f0f0 ) );background:-webkit-linear-gradient( top,#fbfbfb,#f0f0f0 );background:-moz-linear-gradient( top,#fbfbfb,#f0f0f0 );background:-o-linear-gradient( top,#fbfbfb,#f0f0f0 );background:linear-gradient( #fbfbfb,#f0f0f0 );padding-left:10px;line-height:1.2em;border-radius:0 0 5px 5px}#uls-settings-block div.display-settings-block,#uls-settings-block div.input-settings-block{display:inline-block;margin:8px 15px;color:#565656}#uls-settings-block div.display-settings-block:hover,#uls-settings-block div.input-settings-block:hover{color:#252525}</style><style>
+.ve-activated #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not( .ve-init-mw-desktopArticleTarget-loading-overlay ), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{ pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0.5}.ve-activated #catlinks{cursor:pointer}.ve-activated #catlinks a{opacity:1} .ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-progress{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-desktopArticleTarget-progress-bar{height:1em;width:0} .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .ve-init-mw-desktopArticleTarget-progress{height:0.75em;border:1px solid #36c;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba( 0,0,0,0.15 )}.ve-init-mw-desktopArticleTarget-progress-bar{height:0.75em;background:#36c}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./POSIX主题 - 维基百科_files/load(2).php">
+<link rel="stylesheet" href="./POSIX主题 - 维基百科_files/load(3).php">
+<meta name="generator" content="MediaWiki 1.30.0-wmf.11">
+<meta name="referrer" content="origin-when-cross-origin">
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/POSIX_Threads">
+<link rel="alternate" type="application/x-wiki" title="编辑这个页面" href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit">
+<link rel="edit" title="编辑这个页面" href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit">
+<link rel="apple-touch-icon" href="https://en.wikipedia.org/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikipedia.org/w/opensearch_desc.php" title="维基百科（en）">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/POSIX_Threads">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><script src="./POSIX主题 - 维基百科_files/load(4).php"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="./POSIX主题 - 维基百科_files/translateelement.css"></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-POSIX_Threads rootpage-POSIX_Threads skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main"><div id="mw-notification-area" class="mw-notification-area mw-notification-area-layout" style="display: none;"></div>
+			<a id="top"></a>
+
+							<div id="siteNotice" class="mw-body-content"><div id="centralNotice"></div><!-- CentralNotice --></div>
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><font><font>POSIX线程</font></font></h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub" class="noprint"><font><font>维基百科，自由的百科全书</font></font></div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump"><font><font>
+					跳转到：					 </font></font><a href="https://en.wikipedia.org/wiki/POSIX_Threads#mw-head"><font><font>导航</font></font></a><font><font>， 					 </font></font><a href="https://en.wikipedia.org/wiki/POSIX_Threads#p-search"><font><font>搜索</font></font></a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p><b><font><font>POSIX线程</font></font></b><font><font>，通常被称为</font></font><b><font><font>并行线程</font></font></b><font><font>，是一种</font></font><a href="https://en.wikipedia.org/wiki/Execution_model" title="执行模式"><font><font>执行模型</font></font></a><font><font>，从一种语言，以及并行执行模型独立地存在。</font><font>它允许程序控制与时间重叠的多个不同的工作流程。</font><font>每个工作流程都被称为</font></font><i><a href="https://en.wikipedia.org/wiki/Thread_(computing)" title="线程（计算）"><font><font>线程</font></font></a></i><font><font>，并通过调用POSIX Threads API来实现对这些流程的创建和控制。</font><font>POSIX线程是</font><font>由标准</font><i><a href="https://en.wikipedia.org/wiki/POSIX" title="POSIX"><font>POSIX</font></a></i><i><font> .1c，线程扩展（</font></i><i><a href="https://en.wikipedia.org/wiki/IEEE" class="mw-redirect" title="IEEE"><font>IEEE</font></a></i><i><font> Std 1003.1c-1995）</font></i><font>定义</font><font>的</font></font><a href="https://en.wikipedia.org/wiki/Application_programming_interface" title="应用程序接口"><font><font>API</font></font></a><font><font>。</font></font><i><a href="https://en.wikipedia.org/wiki/POSIX" title="POSIX"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/IEEE" class="mw-redirect" title="IEEE"><font></font></a><font></font></i><font></font></p>
+<p><font><font>API的实现可以在</font><font>诸如</font><a href="https://en.wikipedia.org/wiki/FreeBSD" title="FreeBSD的"><font>FreeBSD</font></a><font>，</font><a href="https://en.wikipedia.org/wiki/NetBSD" title="NetBSD的"><font>NetBSD</font></a><font>，</font><a href="https://en.wikipedia.org/wiki/OpenBSD" title="OpenBSD系统"><font>OpenBSD</font></a><font>，</font><a href="https://en.wikipedia.org/wiki/Linux" title="Linux的"><font>Linux</font></a><font>，</font><a href="https://en.wikipedia.org/wiki/Mac_OS_X" class="mw-redirect" title="Mac OS X"><font>Mac OS X</font></a><font>，</font><a href="https://en.wikipedia.org/wiki/Android_(operating_system)" title="Android（操作系统）"><font>Android </font></a><sup id="cite_ref-1" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-1"><font>[1]</font></a></sup><font>和</font><a href="https://en.wikipedia.org/wiki/Solaris_(operating_system)" title="Solaris（操作系统）"><font>Solaris之</font></a></font><a href="https://en.wikipedia.org/wiki/Unix-like" title="类Unix"><font><font>类的</font></font></a><font><font>许多</font><font>符合</font><a href="https://en.wikipedia.org/wiki/Unix-like" title="类Unix"><font>Unix的</font></a><font> POSIX操作系统上使用</font><font>，通常捆绑为库</font><b><font>libpthread</font></b><font>。</font><font>还存在</font><a href="https://en.wikipedia.org/wiki/DR-DOS" title="DR-DOS"><font>DR-DOS</font></a><font>和</font><a href="https://en.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows"><font>Microsoft Windows</font></a><font>实现：在</font><font>提供多个POSIX API的本机实现</font><font>的</font><a href="https://en.wikipedia.org/wiki/Windows_Services_for_UNIX" title="适用于UNIX的Windows服务"><font>SFU / SUA</font></a><font>子系统中，以及</font><a href="https://en.wikipedia.org/wiki/Third-party_developer" class="mw-redirect" title="第三方开发商"><font>第三方</font></a><font>软件包（如</font><i><font>pthreads-w32）中</font></i><font>，</font></font><a href="https://en.wikipedia.org/wiki/FreeBSD" title="FreeBSD的"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/NetBSD" title="NetBSD的"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/OpenBSD" title="OpenBSD系统"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/Linux" title="Linux的"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/Mac_OS_X" class="mw-redirect" title="Mac OS X"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/Android_(operating_system)" title="Android（操作系统）"><font></font></a><sup id="cite_ref-1" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-1"><font></font></a></sup><font></font><a href="https://en.wikipedia.org/wiki/Solaris_(operating_system)" title="Solaris（操作系统）"><font></font></a><font></font><b><font></font></b><font></font><a href="https://en.wikipedia.org/wiki/DR-DOS" title="DR-DOS"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/Windows_Services_for_UNIX" title="适用于UNIX的Windows服务"><font></font></a><font></font><a href="https://en.wikipedia.org/wiki/Third-party_developer" class="mw-redirect" title="第三方开发商"><font></font></a><font></font><i><font></font></i><font></font><sup id="cite_ref-2" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-2"><font></font></a></sup><font></font><a href="https://en.wikipedia.org/wiki/Windows_API" title="Windows API"><font></font></a><font></font></p>
+<p></p>
+<div id="toc" class="toc">
+<div class="toctitle">
+<h2><font><font>内容</font></font></h2>
+<span class="toctoggle"><font><font>&nbsp;[ </font></font><a role="button" tabindex="0" class="togglelink"><font><font>隐藏</font></font></a><font><font> ]&nbsp;</font></font></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#Contents"><span class="tocnumber"><font><font>1 </font></font></span> <span class="toctext"><font><font>目录</font></font></span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#Example"><span class="tocnumber"><font><font>2 </font></font></span> <span class="toctext"><font><font>示例</font></font></span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#POSIX_Threads_for_Windows"><span class="tocnumber"><font><font>3个</font></font></span> <span class="toctext"><font><font>POSIX线程Windows</font></font></span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#See_also"><span class="tocnumber"><font><font>4 </font></font></span> <span class="toctext"><font><font>另见</font></font></span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#References"><span class="tocnumber"><font><font>5 </font></font></span> <span class="toctext"><font><font>参考文献</font></font></span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#Further_reading"><span class="tocnumber"><font><font>6 </font></font></span> <span class="toctext"><font><font>进一步阅读</font></font></span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#External_links"><span class="tocnumber"><font><font>7 </font></font></span> <span class="toctext"><font><font>外部链接</font></font></span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Contents"><font><font>内容</font></font></span><span class="mw-editsection"><span class="mw-editsection-bracket"><font><font>[ </font></font></span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit&amp;section=1" title="编辑部分：内容"><font><font>编辑</font></font></a><span class="mw-editsection-bracket"><font><font>]</font></font></span></span></h2>
+<p><font><font>Pthreads定义了一组</font></font><a href="https://en.wikipedia.org/wiki/C_(programming_language)" title="C（编程语言）"><font><font>C</font></font></a><font><font>编程语言</font></font><a href="https://en.wikipedia.org/wiki/Data_type" title="数据类型"><font><font>类型</font></font></a><font><font>，</font></font><a href="https://en.wikipedia.org/wiki/Function_(computer_science)" class="mw-redirect" title="功能（计算机科学）"><font><font>函数</font></font></a><font><font>和常量。</font><font>它使用</font></font><code>pthread.h</code><font><font>标题和线程</font></font><a href="https://en.wikipedia.org/wiki/Library" title="图书馆"><font><font>库实现</font></font></a><font><font>。</font></font></p>
+<p><font><font>有大约100个Pthread程序，所有的前缀</font></font><code>pthread_</code><font><font>都可以分为四组：</font></font></p>
+<ul>
+<li><font><font>线程管理 - 创建，加入线程等</font></font></li>
+<li><a href="https://en.wikipedia.org/wiki/Mutex" class="mw-redirect" title="互斥"><font><font>互斥</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Condition_variable" class="mw-redirect" title="条件变量"><font><font>条件变量</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Synchronization_(computer_science)" title="同步（计算机科学）"><font></font></a><font><font>使用读/写锁和屏障的线程之间的</font><a href="https://en.wikipedia.org/wiki/Synchronization_(computer_science)" title="同步（计算机科学）"><font>同步</font></a></font></li>
+</ul>
+<p><font><font>POSIX </font></font><a href="https://en.wikipedia.org/wiki/Semaphore_(programming)" title="信号量（编程）"><font><font>信号量</font></font></a><font><font> API与POSIX线程一起工作，但不是在</font></font><i><font><font>POSIX.1b（IEEE Std 1003.1b-1993）</font></font></i><font><font>标准中</font><font>定义的线程标准的一部分</font><font>。</font><font>因此，信号量程序的前缀是</font></font><code>sem_</code><font><font>替代</font></font><code>pthread_</code><font><font>。</font></font></p>
+<h2><span class="mw-headline" id="Example"><font><font>示例</font></font></span><span class="mw-editsection"><span class="mw-editsection-bracket"><font><font>[ </font></font></span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit&amp;section=2" title="编辑部分：示例"><font><font>编辑</font></font></a><span class="mw-editsection-bracket"><font><font>]</font></font></span></span></h2>
+<p><font><font>说明在C中使用Pthreads的例子：</font></font></p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre><span class="cp"><font><font>#include </font></font></span> <span class="cpf"><font><font>&lt;pthread.h&gt; </font></font></span>
+<span class="cp"><font><font>#include </font></font></span> <span class="cpf"><font><font>&lt;stdio.h&gt; </font></font></span>
+<span class="cp"><font><font>#include </font></font></span> <span class="cpf"><font><font>&lt;stdlib.h&gt; </font></font></span>
+<span class="cp"><font><font>#include </font></font></span> <span class="cpf"><font><font>&lt;assert.h&gt;</font></font></span><font></font>
+ <font></font>
+<span class="cp"><font><font>#define NUM_THREADS 5</font></font></span><font></font>
+ <font></font>
+<span class="kt"><font><font>void </font></font></span><span class="o"><font><font>* </font></font></span> <span class="nf"><font><font>perform_work </font></font></span><span class="p"><font><font>（</font></font></span> <span class="kt"><font><font>void </font></font></span><span class="o"><font><font>* </font></font></span> <span class="n"><font><font>argument </font></font></span> <span class="p"><font><font>）</font></font></span>
+<span class="p"><font><font>{ </font></font></span>
+  <span class="kt"><font><font>int </font></font></span> <span class="n"><font><font>passed_in_value </font></font></span><span class="p"><font><font>;</font></font></span><font></font>
+ <font></font>
+  <span class="n"><font><font>passed_in_value </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="o"><font><font>* </font></font></span><span class="p"><font><font>（</font></font></span> <span class="p"><font><font>（</font></font></span> <span class="kt"><font><font>int </font></font></span><span class="o"><font><font>* </font></font></span> <span class="p"><font><font>）</font></font></span><span class="n"><font><font>参数</font></font></span> <span class="p"><font><font>）; </font></font></span>
+  <span class="n"><font><font>printf </font></font></span><span class="p"><font><font>（</font></font></span> <span class="s"><font><font>“Hello World！It's me，thread with argument％d！</font></font></span><span class="se"><font><font>\ n </font></font></span><span class="s"><font><font>” </font></font></span><span class="p"><font><font>，</font></font></span> <span class="n"><font><font>passed_in_value </font></font></span> <span class="p"><font><font>）;</font></font></span><font></font>
+ <font></font>
+  <span class="cm"><font><font>/ *可选：在这里插入更多有用的东西* /</font></font></span><font></font>
+ <font></font>
+  <span class="k"><font><font>返回</font></font></span> <span class="nb"><font><font>NULL </font></font></span><span class="p"><font><font>; </font></font></span>
+<span class="p"><font><font>}</font></font></span><font></font>
+ <font></font>
+<span class="kt"><font><font>int </font></font></span> <span class="nf"><font><font>main </font></font></span><span class="p"><font><font>（</font></font></span> <span class="kt"><font><font>int </font></font></span> <span class="n"><font><font>argc </font></font></span><span class="p"><font><font>，</font></font></span> <span class="kt"><font><font>char </font></font></span><span class="o"><font><font>** </font></font></span> <span class="n"><font><font>argv </font></font></span> <span class="p"><font><font>）</font></font></span>
+<span class="p"><font><font>{ </font></font></span>
+  <span class="n"><font><font>pthread_t </font></font></span> <span class="n"><font><font>threads </font></font></span><span class="p"><font><font>[ </font></font></span> <span class="n"><font><font>NUM_THREADS </font></font></span> <span class="p"><font><font>]; </font></font></span>
+  <span class="kt"><font><font>int </font></font></span> <span class="n"><font><font>thread_args </font></font></span><span class="p"><font><font>[ </font></font></span> <span class="n"><font><font>NUM_THREADS </font></font></span> <span class="p"><font><font>]; </font></font></span>
+  <span class="kt"><font><font>int </font></font></span> <span class="n"><font><font>result_code </font></font></span><span class="p"><font><font>; </font></font></span>
+  <span class="kt"><font><font>无符号</font></font></span> <span class="n"><font><font>索引</font></font></span><span class="p"><font><font>;</font></font></span><font></font>
+ <font></font>
+  <span class="c1"><font><font>//创建的所有线程逐一</font></font></span>
+  <span class="k"><font><font>对</font></font></span><span class="p"><font><font>（</font></font></span> <span class="n"><font><font>索引</font></font></span> <span class="o"><font><font>= </font></font></span> <span class="mi"><font><font>0 </font></font></span><span class="p"><font><font>; </font></font></span> <span class="n"><font><font>索引</font></font></span> <span class="o"><font><font>&lt; </font></font></span> <span class="n"><font><font>NUM_THREADS </font></font></span><span class="p"><font><font>; </font></font></span> <span class="o"><font><font>++ </font></font></span><span class="n"><font><font>索引</font></font></span> <span class="p"><font><font>）</font></font></span>
+  <span class="p"><font><font>{ </font></font></span>
+    <span class="n"><font><font>thread_args </font></font></span><span class="p"><font><font>[ </font></font></span> <span class="n"><font><font>索引</font></font></span> <span class="p"><font><font>] </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="n"><font><font>指数</font></font></span><span class="p"><font><font>; </font></font></span>
+    <span class="n"><font><font>printf </font></font></span><span class="p"><font><font>（</font></font></span><span class="s"><font><font>“主要：创建线程％d </font></font></span><span class="se"><font><font>\ n </font></font></span><span class="s"><font><font>” </font></font></span><span class="p"><font><font>，</font></font></span> <span class="n"><font><font>索引</font></font></span><span class="p"><font><font>）; </font></font></span>
+    <span class="n"><font><font>result_code </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="n"><font><font>pthread_create </font></font></span><span class="p"><font><font>（</font></font></span> <span class="o"><font><font>＆</font></font></span><span class="n"><font><font>threads </font></font></span><span class="p"><font><font>[ </font></font></span><span class="n"><font><font>index </font></font></span><span class="p"><font><font>]，</font></font></span> <span class="nb"><font><font>NULL </font></font></span><span class="p"><font><font>，</font></font></span> <span class="n"><font><font>perform_work </font></font></span><span class="p"><font><font>，</font></font></span> <span class="o"><font><font>＆</font></font></span><span class="n"><font><font>thread_args </font></font></span><span class="p"><font><font>[ </font></font></span><span class="n"><font><font>index </font></font></span><span class="p"><font><font>] </font></font></span> <span class="p"><font><font>）; </font></font></span>
+    <span class="n"><font><font>assert </font></font></span><span class="p"><font><font>（</font></font></span> <span class="o"><font><font>！</font></font></span><span class="n"><font><font>result_code </font></font></span> <span class="p"><font><font>）; </font></font></span>
+  <span class="p"><font><font>}</font></font></span><font></font>
+ <font></font>
+  <span class="c1"><font><font>//等待每个线程完成</font></font></span>
+  <span class="k"><font><font>for </font></font></span><span class="p"><font><font>（</font></font></span> <span class="n"><font><font>index </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="mi"><font><font>0 </font></font></span><span class="p"><font><font>; </font></font></span> <span class="n"><font><font>index </font></font></span> <span class="o"><font><font>&lt; </font></font></span> <span class="n"><font><font>NUM_THREADS </font></font></span><span class="p"><font><font>; </font></font></span> <span class="o"><font><font>++ </font></font></span><span class="n"><font><font>index </font></font></span> <span class="p"><font><font>）</font></font></span>
+  <span class="p"><font><font>{ </font></font></span>
+    <span class="c1"><font><font>//块直到线程'index'完成</font></font></span>
+    <span class="n"><font><font>result_code </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="n"><font><font>pthread_join </font></font></span><span class="p"><font><font>（</font></font></span> <span class="n"><font><font>threads </font></font></span><span class="p"><font><font>[ </font></font></span> <span class="n"><font><font>index </font></font></span> <span class="p"><font><font>]，</font></font></span> <span class="nb"><font><font>NULL </font></font></span> <span class="p"><font><font>）; </font></font></span>
+    <span class="n"><font><font>assert </font></font></span><span class="p"><font><font>（</font></font></span> <span class="o"><font><font>！</font></font></span><span class="n"><font><font>result_code </font></font></span> <span class="p"><font><font>）; </font></font></span>
+    <span class="n"><font><font>printf </font></font></span><span class="p"><font><font>（</font></font></span> <span class="s"><font><font>“主要：线程％d已经完成</font></font></span><span class="se"><font><font>\ n </font></font></span><span class="s"><font><font>” </font></font></span><span class="p"><font><font>，</font></font></span> <span class="n"><font><font>索引</font></font></span> <span class="p"><font><font>）; </font></font></span>
+   <span class="p"><font><font>}</font></font></span><font></font>
+ <font></font>
+   <span class="n"><font><font>printf </font></font></span><span class="p"><font><font>（</font></font></span> <span class="s"><font><font>“主要：所有线程成功完成</font></font></span><span class="se"><font><font>\ n </font></font></span><span class="s"><font><font>” </font></font></span> <span class="p"><font><font>）; </font></font></span>
+   <span class="n"><font><font>退出</font></font></span><span class="p"><font><font>（</font></font></span> <span class="n"><font><font>EXIT_SUCCESS </font></font></span> <span class="p"><font><font>）; </font></font></span>
+<span class="p"><font><font>}</font></font></span>
+</pre></div>
+<p><font><font>该程序创建五个线程，每个执行函数</font></font><i><font><font>perform_work</font></font></i><font><font>，将该线程的唯一编号打印到标准输出。</font><font>如果程序员希望线程相互通信，这将需要在任何函数的范围之外定义变量，使其成为</font></font><a href="https://en.wikipedia.org/wiki/Global_variable" title="全局变量"><font><font>全局变量</font></font></a><font><font>。</font><font>该程序可以使用</font></font><a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection" title="GNU编译器集合"><font><font>gcc</font></font></a><font><font>编译器使用以下命令进行编译：</font></font></p>
+<pre><font><font>gcc pthreads_demo.c -pthread -o pthreads_demo
+</font></font></pre>
+<h2><span class="mw-headline" id="POSIX_Threads_for_Windows"><font><font>用于Windows的POSIX主题</font></font></span><span class="mw-editsection"><span class="mw-editsection-bracket"><font><font>[ </font></font></span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit&amp;section=3" title="编辑部分：适用于Windows的POSIX线程"><font><font>编辑</font></font></a><span class="mw-editsection-bracket"><font><font>]</font></font></span></span></h2>
+<p><font><font>Windows本身不支持pthreads标准，因此</font></font><a rel="nofollow" class="external text" href="http://sourceware.org/pthreads-win32/"><font><font>Pthreads-w32</font></font></a><font><font>项目旨在提供一种便携式和开源的包装器实现。</font><font>它也可以用于</font><font>将Windows平台的</font></font><a href="https://en.wikipedia.org/wiki/Unix" title="Unix的"><font><font>Unix</font></font></a><font><font>软件（使用pthreads）进行很少或没有修改。</font></font><sup id="cite_ref-3" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-3"><font><font>[3]</font></font></a></sup><font><font>使用一些补丁程序，最新版本2.8.0与64位Windows系统兼容。</font></font><sup id="cite_ref-4" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-4"><font><font>[4] </font></font></a></sup><sup id="cite_ref-5" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-5"><font><font>[5] </font></font></a></sup><sup id="cite_ref-6" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-6"><font><font>[6]</font></font></a></sup><font><font> 2.9.0据说也是64位兼容的。</font></font><sup id="cite_ref-7" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-7"><font><font>[7]</font></font></a></sup></p>
+<p><font><font>mingw-w64项目还包含pthreads，winpthreads </font></font><sup id="cite_ref-8" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-8"><font><font>[8]</font></font></a></sup><font><font>的包装器实现，</font><font>它尝试使用比Pthreads-w32项目更多的本机系统调用。</font></font><sup id="cite_ref-9" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-9"><font><font>[9]</font></font></a></sup></p>
+<p><a href="https://en.wikipedia.org/wiki/Interix" title="INTERIX"><font></font></a><font><font>适用于</font></font><a href="https://en.wikipedia.org/wiki/Windows_Services_for_UNIX" title="适用于UNIX的Windows服务"><font><font>UNIX / Subsystem（用于基于UNIX的应用</font></font></a><font><font>程序）</font><font>的</font><a href="https://en.wikipedia.org/wiki/Windows_Services_for_UNIX" title="适用于UNIX的Windows服务"><font>Windows Services</font></a><font>中的</font><a href="https://en.wikipedia.org/wiki/Interix" title="INTERIX"><font>Interix</font></a><font>环境子系统提供</font><font>pthreads API的本机端口，即不映射到Win32 / Win64 API，而是直接构建在操作系统</font></font><a href="https://en.wikipedia.org/wiki/Syscall" class="mw-redirect" title="系统调用"><font><font>syscall</font></font></a><font><font>界面上。</font></font><sup id="cite_ref-10" class="reference"><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_note-10"><font><font>[10]</font></font></a></sup></p>
+<h2><span class="mw-headline" id="See_also"><font><font>另见</font></font></span><span class="mw-editsection"><span class="mw-editsection-bracket"><font><font>[ </font></font></span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit&amp;section=4" title="编辑部分：另见"><font><font>编辑</font></font></a><span class="mw-editsection-bracket"><font><font>]</font></font></span></span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Execution_model" title="执行模式"><font><font>执行模式</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Runtime_system" title="运行系统"><font><font>运行时系统</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/OpenMP" title="OpenMP的"><font><font>OpenMP的</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cilk" title="的Cilk"><font><font>Cilk</font></font></a><font><font> / </font></font><a href="https://en.wikipedia.org/wiki/Cilk_Plus" class="mw-redirect" title="Cilk Plus"><font><font>Cilk Plus</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Threading_Building_Blocks" title="螺纹构件"><font><font>螺纹构件</font></font></a><font><font>（TBB）</font></font></li>
+<li><a href="https://en.wikipedia.org/wiki/Native_POSIX_Thread_Library" title="本机POSIX线程库"><font><font>本机POSIX线程库</font></font></a><font><font>（NPTL）</font></font></li>
+<li><a href="https://en.wikipedia.org/wiki/DCEThreads" title="DCEThreads"><font><font>DCEThreads</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Clone_(Linux_system_call)" class="mw-redirect" title="克隆（Linux系统调用）"><font><font>克隆（Linux系统调用）</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Spurious_wakeup" title="杂散唤醒"><font><font>杂散唤醒</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Thread-local_storage" title="线程本地存储"><font><font>线程本地存储</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/GNU_Portable_Threads" title="GNU便携式线程"><font><font>GNU便携式线程</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/FSU_Pthreads" title="FSU Pthreads"><font><font>FSU Pthreads</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Grand_Central_Dispatch" title="大中央派驻"><font><font>大中央派驻</font></font></a><font><font>（苹果线程库）</font></font></li>
+<li><a href="https://en.wikipedia.org/wiki/Beginthread" title="Beginthread"><font><font>Beginthread</font></font></a><font><font>（Windows中的子例程，用于创建新线程和unix线程）</font></font></li>
+<li><a href="https://en.wikipedia.org/wiki/State_Threads" title="状态线程"><font><font>状态线程</font></font></a><font><font>，事件驱动的线程方法</font></font></li>
+</ul>
+<h2><span class="mw-headline" id="References"><font><font>参考文献</font></font></span><span class="mw-editsection"><span class="mw-editsection-bracket"><font><font>[ </font></font></span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit&amp;section=5" title="编辑部分：参考"><font><font>编辑</font></font></a><span class="mw-editsection-bracket"><font><font>]</font></font></span></span></h2>
+<div class="reflist columns references-column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-1"><span class="cite-accessibility-label"><font><font>跳转</font></font></span><font><font> ^</font></font></a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="https://android.googlesource.com/platform/bionic/+/10ce969/libc/bionic/pthread.c"><font><font> https://android.googlesource.com/platform/bionic/+/10ce969/libc/bionic/pthread.c</font></font></a></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-2"><span class="cite-accessibility-label"><font><font>跳起来</font></font></span><font><font> ^ </font></font></a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://sources.redhat.com/pthreads-win32/conformance.html"><font><font>“的Pthread的Win-32：标准一致性水平”</font></font></a><font><font>。</font><font>2006-12-22</font></font><span class="reference-accessdate"><font><font>。</font><font>检索</font></font><span class="nowrap"><font><font>2010-08-29</font></font></span></span><font><font>。</font></font></cite><span title="ctx_ver = Z39.88-2004＆rfr_id =信息％3Asid％2Fen.wikipedia.org％3APOSIX +线程＆rft.btitle = Pthread的+的Win-32％3A + + +标准一致的等级+ rft.date = 2006-12-22＆rft.genre =未知＆rft_id = HTTP％3A％2F％2Fsources.redhat.com％2Fpthreads-的win32％2Fconformance.html＆rft_val_fmt =信息％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-3"><span class="cite-accessibility-label"><font><font>跳高</font></font></span><font><font> ^</font></font></a></b></span> <span class="reference-text"><cite class="citation web"><font><font>哈特，约翰逊M.（2004-11-21）。</font></font><a rel="nofollow" class="external text" href="http://world.std.com/~jmhart/opensource.htm"><font><font>“实验开源Pthreads库和一些评论” </font></font></a><span class="reference-accessdate"><font><font>。</font><font>检索</font></font><span class="nowrap"><font><font>2010-08-29</font></font></span></span><font><font>。</font></font></cite><span title="ctx_ver = Z39.88-2004＆rfr_id =信息％3Asid％2Fen.wikipedia.org％3APOSIX +线程＆rft.aufirst =约翰逊+ M。＆rft.aulast =哈特＆rft.btitle =实验+有+ + +开放源码+ P线程+库+和+ +一些意见＆rft.date = 2004-11-21＆rft.genre =未知＆rft_id = HTTP％3A％2F％2Fworld.std.com％2F〜jmhart％2Fopensource.htm＆rft_val_fmt =信息％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-4"><span class="cite-accessibility-label"><font><font>跳起来</font></font></span><font><font> ^ </font></font></a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://code.google.com/p/libusb-winusb-wip/downloads/detail?name=pthread-win32_x64.zip&amp;can=2&amp;q="><font><font>“pthread-win32_x64.zip Pthreads-w32 v2.8.0的源和二进制”</font></font></a><font><font>。</font><font>2010-01-26</font></font><span class="reference-accessdate"><font><font>。</font><font>检索</font></font><span class="nowrap"><font><font>2010-08-29</font></font></span></span><font><font>。</font></font></cite><span title="为+ P线程-W32 + V2.8.0 ctx_ver = Z39.88-2004＆rfr_id =信息％3Asid％2Fen.wikipedia.org％3APOSIX +线程＆rft.btitle = pthread-win32_x64.zip +源+和+二进制+ rft.date = 2010 -01-26＆rft.genre =未知＆rft_id = HTTPS％3A％2F％2Fcode.google.com％2FP％2Flibusb-了WinUSB-WIP％2Fdownloads％2Fdetail％3Fname％3Dpthread-win32_x64.zip％26can％3D2％26Q％3D＆rft_val_fmt =信息％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-5"><span class="cite-accessibility-label"><font><font>跳起来</font></font></span><font><font> ^ </font></font></a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://libusb.6.n5.nabble.com/pthreads-on-64bit-Windows-td48i20.html"><font><font>“论坛讨论：pthreads-on-64bit-Windows”</font></font></a><font><font>。</font><font>2010-01-26</font></font><span class="reference-accessdate"><font><font>。</font><font>检索</font></font><span class="nowrap"><font><font>2010-08-29</font></font></span></span><font><font>。</font></font></cite><span title="ctx_ver = Z39.88-2004＆rfr_id =资讯％3Asid％2Fen.wikipedia.org％3APOSIX +主题与rft.btitle =论坛+讨论％3A +并行线程-ON-64-Windows和rft.date = 2010-01-26＆rft.genre =未知＆rft_id = HTTP％3A％2F％2Flibusb.6.n5.nabble.com％2Fpthreads-ON-64-Windows的td48i20.html＆rft_val_fmt =资讯％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-6"><span class="cite-accessibility-label"><font><font>跳起来</font></font></span><font><font> ^</font></font></a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://sourceforge.net/apps/trac/mingw-w64/wiki/Compile%20pthreads"><font><font>编译pthreads  -  mingw-w64</font></font></a></span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-7"><span class="cite-accessibility-label"><font><font>跳起来</font></font></span><font><font> ^</font></font></a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://sourceware.org/pthreads-win32/news.html"><font><font> http://sourceware.org/pthreads-win32/news.html</font></font></a><font><font>- “64位”提到</font></font></span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-8"><span class="cite-accessibility-label"><font><font>跳起来</font></font></span><font><font> ^</font></font></a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://mingw-w64.svn.sourceforge.net/svnroot/mingw-w64/experimental/winpthreads"><font><font> mingw-w64  - 修订5520：/ experimental / winpthreads</font></font></a></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-9"><span class="cite-accessibility-label"><font><font>跳起来</font></font></span><font><font> ^</font></font></a></b></span> <span class="reference-text"><font><font>看到</font></font><a rel="nofollow" class="external free" href="http://locklessinc.com/articles/pthreads_on_windows"><font><font>http://locklessinc.com/articles/pthreads_on_windows</font></font></a><font><font>这是它最初源自</font></font></span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/POSIX_Threads#cite_ref-10"><span class="cite-accessibility-label"><font><font>跳转</font></font></span><font><font> ^ </font></font></a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://technet.microsoft.com/en-us/library/bb496994.aspx"><font><font>“第1章：适用于UNIX 3.5的Windows服务简介”</font></font></a><font><font>。</font></font></cite><span title="ctx_ver = Z39.88-2004＆rfr_id =资讯％3Asid％2Fen.wikipedia.org％3APOSIX +主题与rft.btitle =章+ 1％3A +简介+到+的Windows +服务+为UNIX + 3.5 rft.genre =未知＆rft_id = HTTP ％3A％2F％2Ftechnet.microsoft.com％2Fen美％2Flibrary％2Fbb496994.aspx＆rft_val_fmt =资讯％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Further_reading"><font><font>进一步阅读</font></font></span><span class="mw-editsection"><span class="mw-editsection-bracket"><font><font>[ </font></font></span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit&amp;section=6" title="编辑部分：进一步阅读"><font><font>编辑</font></font></a><span class="mw-editsection-bracket"><font><font>]</font></font></span></span></h2>
+<ul>
+<li><cite class="citation book"><font><font>大卫·布丁霍夫 </font></font><i><font><font>用POSIX线程编程</font></font></i><font><font>。</font><font>Addison-Wesley出版社。</font></font><a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="国际标准书号"><font><font>ISBN </font></font></a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-201-63392-2" title="特别声明：BookSources / 0-201-63392-2"><font><font>0-201-63392-2</font></font></a><font><font>。</font></font></cite><span title="ctx_ver = Z39.88-2004＆rfr_id =资讯％3Asid％2Fen.wikipedia.org％3APOSIX +主题与rft.au =大卫+ R. + Butenhof＆rft.btitle = +与POSIX线程+＆rft.genre =编程+书＆rft.isbn = 0-201 -63392-2＆rft.pub = Addison-Wesley出版社＆rft_val_fmt =信息％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation book"><font><font>布拉德福·尼科尔斯 </font><font>迪克Buttlar </font><font>Jacqueline Proulx Farell。</font></font><i><font><font>Pthreads编程</font></font></i><font><font>。</font><font>O'Reilly＆Associates。</font></font><a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="国际标准书号"><font><font>ISBN </font></font></a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/1-56592-115-1" title="特别声明：BookSources / 1-56592-115-1"><font><font>1-56592-115-1</font></font></a><font><font>。</font></font></cite><span title="ctx_ver = Z39.88-2004＆rfr_id =信息％3Asid％2Fen.wikipedia.org％3APOSIX +线程＆rft.au =布拉德福德+尼科尔斯＆rft.au =迪克+布特拉尔＆rft.au =杰奎琳+普鲁+ Farell＆rft.btitle = P线程+编程＆rft.genre =本书＆rft.isbn = 1-56592-115-1＆rft.pub = O％27Reilly +％26 +协会与rft_val_fmt =资讯％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation book"><font><font>哈佛大学 </font></font><i><font><font>编程与UNIX线程</font></font></i><font><font>。</font><font>John Wiley＆Sons。</font></font><a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="国际标准书号"><font><font>ISBN </font></font></a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-471-13751-0" title="特别声明：BookSources / 0-471-13751-0"><font><font>0-471-13751-0</font></font></a><font><font>。</font></font></cite><span title="ctx_ver = Z39.88-2004＆rfr_id =信息％3Asid％2Fen.wikipedia.org％3APOSIX +线程＆rft.au =查尔斯+ J. + Northrup公司＆rft.btitle =与+ UNIX +线程＆rft.genre =编程+书＆rft.isbn = 0-471 -13751-0＆rft.pub =约翰+威利+％26 + SONS＆rft_val_fmt =信息％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation book"><font><font>凯·罗宾斯和史蒂文·罗宾斯 </font></font><i><font><font>UNIX系统编程</font></font></i><font><font>。</font><font>普伦蒂斯霍尔。</font></font><a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="国际标准书号"><font><font>ISBN </font></font></a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-13-042411-0" title="特别声明：BookSources / 0-13-042411-0"><font><font>0-13-042411-0</font></font></a><font><font>。</font></font></cite><span title="ctx_ver = Z39.88-2004＆rfr_id =资讯％3Asid％2Fen.wikipedia.org％3APOSIX +主题与rft.au =凯+ A. +罗宾斯＆rft.au =史蒂芬+罗宾斯＆rft.btitle = UNIX +系统+编程与rft.genre =书和rft.isbn = 0-13-042411-0＆rft.pub =普伦蒂斯霍尔＆rft_val_fmt =资讯％3Aofi％2Ffmt％3Akev％3Amtx％3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links"><font><font>外部链接</font></font></span><span class="mw-editsection"><span class="mw-editsection-bracket"><font><font>[ </font></font></span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit&amp;section=7" title="编辑部分：外部链接"><font><font>编辑</font></font></a><span class="mw-editsection-bracket"><font><font>]</font></font></span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/pthread.h.html"><font><font>开放组基础规范第7期IEEE Std 1003.1</font></font></a></li>
+</ul>
+<div role="navigation" class="navbox" aria-labelledby="Parallel_computing" style="padding:3px">
+<table class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit" id="collapsibleTable0">
+<tbody><tr>
+<th scope="col" class="navbox-title" colspan="2"><span class="collapseButton"><font><font>[ </font></font><a id="collapseButton0" href="https://en.wikipedia.org/wiki/POSIX_Threads#"><font><font>隐藏</font></font></a><font><font> ]</font></font></span>
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="https://en.wikipedia.org/wiki/Template:Parallel_computing" title="模板：并行计算"><abbr title="查看此模板" style=";;background:none transparent;border:none;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;"><font><font>v</font></font></abbr></a></li>
+<li class="nv-talk"><a href="https://en.wikipedia.org/wiki/Template_talk:Parallel_computing" title="模板谈话：并行计算"><abbr title="讨论这个模板" style=";;background:none transparent;border:none;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;"><font><font>Ť</font></font></abbr></a></li>
+<li class="nv-edit"><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Template:Parallel_computing&amp;action=edit"><abbr title="编辑此模板" style=";;background:none transparent;border:none;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;"><font><font>Ë</font></font></abbr></a></li>
+</ul>
+</div>
+<div id="Parallel_computing" style="font-size:114%;margin:0 4em"><a href="https://en.wikipedia.org/wiki/Parallel_computing" title="并行计算"><font><font>并行计算</font></font></a></div>
+</th>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><font><font>一般</font></font></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Distributed_computing" title="分布式计算"><font><font>分布式计算</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_computing" title="并行计算"><font><font>并行计算</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Massively_parallel" title="大量平行"><font><font>大量平行</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cloud_computing" title="云计算"><font><font>云计算</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Supercomputer" title="超级计算机"><font><font>高性能计算</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Multiprocessing" title="多"><font><font>多</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Manycore_processor" title="Manycore处理器"><font><font>Manycore处理器</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units" title="图形处理单元的通用计算"><font><font>GPGPU</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Computer_network" title="计算机网络"><font><font>计算机网络</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Systolic_array" title="收缩阵列"><font><font>收缩阵列</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><font><font>水平</font></font></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Bit-level_parallelism" title="位级并行性"><font><font>位</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Instruction-level_parallelism" title="指令级并行性"><font><font>指令</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Task_parallelism" title="任务并行性"><font><font>线</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Task_parallelism" title="任务并行性"><font><font>任务</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Data_parallelism" title="数据并行性"><font><font>数据</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Memory-level_parallelism" title="内存级并行性"><font><font>记忆</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Loop-level_parallelism" title="循环级并行性"><font><font>循环</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pipeline_(computing)" title="管道（计算）"><font><font>管道</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><a href="https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)" title="多线程（计算机体系结构）"><font><font>多线程</font></font></a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Temporal_multithreading" title="时间多线程"><font><font>颞</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Simultaneous_multithreading" title="同时多线程"><font><font>同步</font></font></a><font><font>（SMT）</font></font></li>
+<li><a href="https://en.wikipedia.org/wiki/Speculative_multithreading" title="投机多线程"><font><font>投机</font></font></a><font><font>（SpMT）</font></font></li>
+<li><a href="https://en.wikipedia.org/wiki/Preemption_(computing)" title="抢占（计算）"><font><font>先发制人</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Computer_multitasking#Cooperative_multitasking" title="电脑多任务"><font><font>合作社</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bulldozer_(microarchitecture)#Bulldozer_core" title="推土机（微架构）"><font><font>群集多线程</font></font></a><font><font>（CMT）</font></font></li>
+<li><a href="https://en.wikipedia.org/wiki/Hardware_scout" title="硬体侦察"><font><font>硬体侦察</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><font><font>理论</font></font></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_random-access_machine" title="并行随机存取机"><font><font>PRAM模型</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Analysis_of_parallel_algorithms" title="并行算法分析"><font><font>并行算法分析</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Amdahl%27s_law" title="阿姆达尔定律"><font><font>阿姆达尔定律</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Gustafson%27s_law" title="古斯塔夫森定律"><font><font>古斯塔夫森定律</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cost_efficiency" title="成本效益"><font><font>成本效益</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Karp%E2%80%93Flatt_metric" title="Karp-Flatt指标"><font><font>Karp-Flatt指标</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_slowdown" title="平行减速"><font><font>慢一点</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Speedup" title="加速"><font><font>加速</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><font><font>分子</font></font></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Process_(computing)" title="过程（计算）"><font><font>处理</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Thread_(computing)" title="线程（计算）"><font><font>线</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Fiber_(computer_science)" title="光纤（计算机科学）"><font><font>纤维</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_window" title="说明窗口"><font><font>说明窗口</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><font><font>协调</font></font></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Multiprocessing" title="多"><font><font>多</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Memory_coherence" title="记忆一致性"><font><font>内存一致性</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cache_coherence" title="缓存一致性"><font><font>缓存一致性</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cache_invalidation" title="缓存无效"><font><font>缓存无效</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Barrier_(computer_science)" title="屏障（计算机科学）"><font><font>屏障</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Synchronization_(computer_science)" title="同步（计算机科学）"><font><font>同步</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Application_checkpointing" title="应用程序检查点"><font><font>应用程序检查点</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><a href="https://en.wikipedia.org/wiki/Computer_programming" title="电脑编程"><font><font>程序设计</font></font></a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Stream_processing" title="流处理"><font><font>流处理</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dataflow_programming" title="数据流编程"><font><font>数据流编程</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_programming_model" title="并行编程模型"><font><font>楷模</font></font></a>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Implicit_parallelism" title="隐含并行性"><font><font>隐含并行性</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Explicit_parallelism" title="显性并行性"><font><font>显性并行性</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Concurrency_(computer_science)" title="并发（计算机科学）"><font><font>并发</font></font></a></li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Non-blocking_algorithm" title="非阻塞算法"><font><font>非阻塞算法</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><a href="https://en.wikipedia.org/wiki/Computer_hardware" title="电脑硬件"><font><font>硬件</font></font></a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Flynn%27s_taxonomy" title="Flynn的分类法"><font><font>Flynn的分类法</font></font></a>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/SISD" title="SISD"><font><font>SISD</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/SIMD" title="SIMD"><font><font>SIMD</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_threads" title="单指令，多线程"><font><font>SIMT</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/MISD" title="MISD"><font><font>MISD</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/MIMD" title="MIMD"><font><font>MIMD</font></font></a></li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Dataflow_architecture" title="数据流架构"><font><font>数据流架构</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_pipelining" title="指令流水线"><font><font>流水线处理器</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Superscalar_processor" title="超标量处理器"><font><font>超标量处理器</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vector_processor" title="矢量处理器"><font><font>矢量处理器</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Multiprocessing" title="多"><font><font>多处理器</font></font></a>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Symmetric_multiprocessing" title="对称多处理"><font><font>对称</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Asymmetric_multiprocessing" title="不对称多处理"><font><font>非对称</font></font></a></li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Semiconductor_memory" title="半导体存储器"><font><font>记忆</font></font></a>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Shared_memory" title="共享内存"><font><font>共享</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Distributed_memory" title="分布式内存"><font><font>分散式</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Distributed_shared_memory" title="分布式共享内存"><font><font>分发共享</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Uniform_memory_access" title="统一的内存访问"><font><font>UMA</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Non-uniform_memory_access" title="非均匀内存访问"><font><font>NUMA</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cache-only_memory_architecture" title="仅缓存内存架构"><font><font>昏迷</font></font></a></li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Massively_parallel" title="大量平行"><font><font>大规模并行计算机</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Computer_cluster" title="计算机集群"><font><font>计算机集群</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Grid_computing" title="网格计算"><font><font>网格电脑</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><a href="https://en.wikipedia.org/wiki/Application_programming_interface" title="应用程序接口"><font><font>蜜蜂</font></font></a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ateji_PX" title="Ateji PX"><font><font>Ateji PX</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Boost_(C%2B%2B_libraries)#Multithreading_.E2.80.93_Boost.Thread" title="Boost（C ++库）"><font><font>Boost.Thread</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Charm%2B%2B" title="魅力++"><font><font>魅力++</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cilk" title="的Cilk"><font><font>的Cilk</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Coarray_Fortran" title="科里·福特兰"><font><font>科里·福特兰</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/CUDA" title="CUDA"><font><font>CUDA</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dryad_(programming)" title="Dryad（编程）"><font><font>树妖</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/C%2B%2B_AMP" title="C ++ AMP"><font><font>C ++ AMP</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Global_Arrays" title="全局数组"><font><font>全局数组</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Message_Passing_Interface" title="消息传递界面"><font><font>MPI</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/OpenMP" title="OpenMP的"><font><font>OpenMP的</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/OpenCL" title="OpenCL的"><font><font>OpenCL的</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/OpenHMPP" title="hmpp开放标准"><font><font>hmpp开放标准</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/OpenACC" title="OpenACC的"><font><font>OpenACC的</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_Extensions#Task_Parallel_Library" title="并行扩展"><font><font>TPL</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_Extensions#PLINQ" title="并行扩展"><font><font>PLINQ</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_Virtual_Machine" title="并行虚拟机"><font><font>PVM</font></font></a></li>
+<li><a class="mw-selflink selflink"><font><font>POSIX线程</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/RaftLib" title="RaftLib"><font><font>RaftLib</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unified_Parallel_C" title="统一并行C"><font><font>UPC</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Threading_Building_Blocks" title="螺纹构件"><font><font>TBB</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="width:1%"><font><font>问题</font></font></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Embarrassingly_parallel" title="尴尬平行"><font><font>尴尬平行</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Software_lockout" title="软件锁定"><font><font>软件锁定</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Scalability" title="可扩展性"><font><font>可扩展性</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Race_condition#Computing" title="竞赛条件"><font><font>竞赛条件</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Deadlock" title="僵局"><font><font>僵局</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Deadlock#Livelock" title="僵局"><font><font>活锁</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Starvation_(computer_science)" title="饥饿（计算机科学）"><font><font>饥饿</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Deterministic_algorithm" title="确定性算法"><font><font>确定性算法</font></font></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_slowdown" title="平行减速"><font><font>平行减速</font></font></a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>
+<ul>
+<li><img alt="类别" src="./POSIX主题 - 维基百科_files/16px-Folder_Hexagonal_Icon.svg.png" title="类别" width="16" height="14" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/24px-Folder_Hexagonal_Icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/48/Folder_Hexagonal_Icon.svg/32px-Folder_Hexagonal_Icon.svg.png 2x" data-file-width="36" data-file-height="31">&nbsp;<a href="https://en.wikipedia.org/wiki/Category:Parallel_computing" title="类别：并行计算"><font><font>类别：并行计算</font></font></a></li>
+<li><img alt="共享页面" src="./POSIX主题 - 维基百科_files/12px-Commons-logo.svg.png" title="共享页面" width="12" height="16" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376"><font><font>有关</font><font>维基共享资源的</font></font><a href="https://commons.wikimedia.org/wiki/Category:Parallel_computing" class="extiw" title="c：类别：并行计算"><font><font>并行计算</font></font></a><font><font>的媒体</font></font></li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1182
+Cached time: 20170715193942
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.124 seconds
+Real time usage: 0.161 seconds
+Preprocessor visited node count: 521/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 34078/2097152 bytes
+Template argument size: 53/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/500
+Lua time usage: 0.052/10.000 seconds
+Lua memory usage: 2.81 MB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  110.283      1 -total
+ 59.40%   65.513      1 Template:Reflist
+ 49.15%   54.200      5 Template:Cite_web
+ 25.19%   27.778      1 Template:Parallel_Computing
+ 21.61%   23.831      1 Template:Navbox
+ 15.03%   16.571      4 Template:Cite_book
+  7.73%    8.530      1 Template:Category-inline
+  6.04%    6.666      2 Template:Icon
+  1.41%    1.550      1 Template:Column-width
+-->
+</div>
+<!-- Saved in parser cache with key enwiki:pcache:idhash:634671-0!canonical and timestamp 20170715193942 and revision id 772239113
+ -->
+<noscript>&lt;img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /&gt;</noscript></div>					<div class="printfooter"><font><font>
+						取自“ </font></font><a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;oldid=772239113"><font><font>https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;oldid=772239113</font></font></a><font><font> ”					</font></font></div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikipedia.org/wiki/Help:Category" title="说明：类别"><font><font>分类</font></font></a><font><font>：</font></font><ul><li><a href="https://en.wikipedia.org/wiki/Category:C_POSIX_library" title="类别：C POSIX库"><font><font>C POSIX库</font></font></a></li><li><a href="https://en.wikipedia.org/wiki/Category:Parallel_computing" title="类别：并行计算"><font><font>并行计算</font></font></a></li><li><a href="https://en.wikipedia.org/wiki/Category:Threads_(computing)" title="类别：线程（计算）"><font><font>线程（计算）</font></font></a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2><font><font>导航菜单</font></font></h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label"><font><font>个人工具</font></font></h3>
+						<ul>
+							<li id="pt-anonuserpage"><font><font>未登录</font></font></li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="讨论此IP地址编辑[ctrl-option-n]" accesskey="n"><font><font>谈论</font></font></a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="由此IP地址编辑的列表[ctrl-option-y]" accesskey="y"><font><font>捐款</font></font></a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=POSIX+Threads" title="我们鼓励您创建一个帐户并登录;  但是，这并不是强制性的"><font><font>创建帐号</font></font></a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=POSIX+Threads" title="鼓励您登录;  但是，这并不是强制性的。 [CTRL-选项-O]" accesskey="o"><font><font>登录</font></font></a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label"><font><font>命名空间</font></font></h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="https://en.wikipedia.org/wiki/POSIX_Threads" title="查看内容页面[ctrl-option-c]" accesskey="c"><font><font>文章</font></font></a></span></li>
+															<li id="ca-talk"><span><a href="https://en.wikipedia.org/wiki/Talk:POSIX_Threads" title="关于内容页的讨论[ctrl-option-t]" accesskey="t" rel="discussion"><font><font>谈论</font></font></a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span><font><font>变种</font></font></span>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label"><font><font>查看</font></font></h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="https://en.wikipedia.org/wiki/POSIX_Threads"><font><font>读</font></font></a></span></li>
+															<li id="ca-edit"><span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=edit" title="编辑此页面[ctrl-option-e]" accesskey="e"><font><font>编辑</font></font></a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=history" title="此页面的过去版本[ctrl-option-h]" accesskey="h"><font><font>查看历史</font></font></a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label" tabindex="0"><span><font><font>更多</font></font></span></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput"><font><font>搜索</font></font></label>
+						</h3>
+
+						<form action="https://en.wikipedia.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="搜索维基百科[ctrl-option-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><font><font><input type="submit" name="go" value="走" title="如果存在，请转到具有此确切名称的页面" id="searchButton" class="searchButton"></font></font>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://en.wikipedia.org/wiki/Main_Page" title="访问主页面"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label"><font><font>导航</font></font></h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="https://en.wikipedia.org/wiki/Main_Page" title="访问主页面[ctrl-option-z]" accesskey="z"><font><font>主页</font></font></a></li><li id="n-contents"><a href="https://en.wikipedia.org/wiki/Portal:Contents" title="指南浏览维基百科"><font><font>内容</font></font></a></li><li id="n-featuredcontent"><a href="https://en.wikipedia.org/wiki/Portal:Featured_content" title="精选内容 - 维基百科最好的"><font><font>典型内容</font></font></a></li><li id="n-currentevents"><a href="https://en.wikipedia.org/wiki/Portal:Current_events" title="查找有关当前事件的背景信息"><font><font>现在发生的事</font></font></a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="加载随机文章[ctrl-option-x]" accesskey="x"><font><font>随机文章</font></font></a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="支持我们"><font><font>捐给维基百科</font></font></a></li><li id="n-shoplink"><a href="https://shop.wikimedia.org/" title="访问维基百科商店"><font><font>维基百科商店</font></font></a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label"><font><font>相互作用</font></font></h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="https://en.wikipedia.org/wiki/Help:Contents" title="关于如何使用和编辑维基百科的指导"><font><font>帮帮我</font></font></a></li><li id="n-aboutsite"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="了解维基百科"><font><font>关于维基百科</font></font></a></li><li id="n-portal"><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="关于项目，你可以做什么，在哪里找到东西"><font><font>社区门户网站</font></font></a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="wiki中最近更改的列表[ctrl-option-r]" accesskey="r"><font><font>最近的变化</font></font></a></li><li id="n-contactpage"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="如何联系维基百科"><font><font>联系页面</font></font></a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label"><font><font>工具</font></font></h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/POSIX_Threads" title="列出包含此页面链接的所有英文维基百科页面[ctrl-option-j]" accesskey="j"><font><font>什么链接在这里</font></font></a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/POSIX_Threads" rel="nofollow" title="最近从此页面链接的页面的更改[ctrl-option-k]" accesskey="k"><font><font>相关变更</font></font></a></li><li id="t-upload"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="上传文件[ctrl-option-u]" accesskey="u"><font><font>上传文件</font></font></a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="所有特殊页面的列表[ctrl-option-q]" accesskey="q"><font><font>专页</font></font></a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;oldid=772239113" title="永久链接到本页面的修订版本"><font><font>永久链接</font></font></a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;action=info" title="关于这个页面的更多信息"><font><font>页面信息</font></font></a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q928112" title="链接到连接的数据存储库项目[ctrl-option-g]" accesskey="g"><font><font>Wikidata项目</font></font></a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=POSIX_Threads&amp;id=772239113" title="有关如何引用本页的信息"><font><font>引用本页</font></font></a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label"><font><font>打印/导出</font></font></h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=POSIX+Threads"><font><font>创建一本书</font></font></a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:ElectronPdf&amp;page=POSIX+Threads&amp;action=show-selection-screen&amp;coll-download-url=%2Fw%2Findex.php%3Ftitle%3DSpecial%3ABook%26bookcmd%3Drender_article%26arttitle%3DPOSIX%2BThreads%26returnto%3DPOSIX%2BThreads%26oldid%3D772239113%26writer%3Drdf2latex"><font><font>下载为PDF格式</font></font></a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=POSIX_Threads&amp;printable=yes" title="此页面的可打印版本[ctrl-option-p]" accesskey="p"><font><font>可打印版本</font></font></a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span class="uls-settings-trigger" title="语言设定" tabindex="0" role="button" aria-haspopup="true"></span>
+			<h3 id="p-lang-label"><font><font>语言</font></font></h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-cs"><a href="https://cs.wikipedia.org/wiki/Posix_threads" title="Posix线程 - 捷克语" lang="cs" hreflang="cs" class="interlanguage-link-target"><font><font>Čeština</font></font></a></li><li class="interlanguage-link interwiki-el"><a href="https://el.wikipedia.org/wiki/%CE%9D%CE%AE%CE%BC%CE%B1%CF%84%CE%B1_POSIX" title="ΝήματαPOSIX  - 希腊语" lang="el" hreflang="el" class="interlanguage-link-target"><font><font>Ελληνικά</font></font></a></li><li class="interlanguage-link interwiki-fa"><a href="https://fa.wikipedia.org/wiki/%D8%B1%DB%8C%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C_%D9%BE%D8%A7%D8%B2%DB%8C%DA%A9%D8%B3" title="ریسههایپازیکس - 波斯语" lang="fa" hreflang="fa" class="interlanguage-link-target"><font><font>فارسی</font></font></a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Threads_POSIX" title="线程POSIX  - 法语" lang="fr" hreflang="fr" class="interlanguage-link-target"><font><font>法语</font></font></a></li><li class="interlanguage-link interwiki-ko"><a href="https://ko.wikipedia.org/wiki/POSIX_%EC%8A%A4%EB%A0%88%EB%93%9C" title="POSIX스레드 - 韩文" lang="ko" hreflang="ko" class="interlanguage-link-target"><font><font>한국어</font></font></a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/POSIX%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89" title="POSIXレッド - 日语" lang="ja" hreflang="ja" class="interlanguage-link-target"><font><font>日本语</font></font></a></li><li class="interlanguage-link interwiki-no"><a href="https://no.wikipedia.org/wiki/POSIX_Threads" title="POSIX主题 - 挪威语" lang="no" hreflang="no" class="interlanguage-link-target"><font><font>Norskbokmål</font></font></a></li><li class="interlanguage-link interwiki-pl"><a href="https://pl.wikipedia.org/wiki/POSIX_Threads" title="POSIX线程 - 波兰语" lang="pl" hreflang="pl" class="interlanguage-link-target"><font><font>波兰语</font></font></a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.wikipedia.org/wiki/POSIX_Threads" title="POSIX线程 - 葡萄牙语" lang="pt" hreflang="pt" class="interlanguage-link-target"><font><font>葡萄牙语</font></font></a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/POSIX_Threads" title="POSIX主题 - 俄语" lang="ru" hreflang="ru" class="interlanguage-link-target"><font><font>Русский</font></font></a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/Pthread" title="Pthread  - 乌克兰语" lang="uk" hreflang="uk" class="interlanguage-link-target"><font><font>Українська</font></font></a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/POSIX%E7%BA%BF%E7%A8%8B" title="POSIX线程 - 中文" lang="zh" hreflang="zh" class="interlanguage-link-target"><font><font>中文</font></font></a></li>					</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q928112#sitelinks-wikipedia" title="编辑语言间链接" class="wbc-editpage"><font><font>编辑链接</font></font></a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"><font><font> 该页面最后一次在2017年3月26日（星期日）03:23。</font></font></li>
+											<li id="footer-info-copyright"><font><font>文字可以根据</font></font><a rel="license" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"><font><font>知识共享署名 - 相同方式共享许可</font></font></a><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a><font><font> ; </font><font>附加条款可能适用。</font><font>使用本网站即表示您同意</font></font><a href="https://wikimediafoundation.org/wiki/Terms_of_Use"><font><font>使用条款</font></font></a><font><font>和</font></font><a href="https://wikimediafoundation.org/wiki/Privacy_policy"><font><font>隐私政策</font></font></a><font><font>。</font><font>Wikipedia®是</font></font><a href="https://www.wikimediafoundation.org/"><font><font>Wikimedia Foundation，Inc.</font></font></a><font><font>（一家非营利组织</font><font>）的注册商标</font><font>。</font></font></li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf：隐私政策"><font><font>隐私政策</font></font></a></li>
+											<li id="footer-places-about"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="维基百科：关于"><font><font>关于维基百科</font></font></a></li>
+											<li id="footer-places-disclaimer"><a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="维基百科：通用免责声明"><font><font>免责声明</font></font></a></li>
+											<li id="footer-places-contact"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us"><font><font>联系维基百科</font></font></a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute"><font><font>开发商</font></font></a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement"><font><font>Cookie声明</font></font></a></li>
+											<li id="footer-places-mobileview"><a href="https://en.m.wikipedia.org/w/index.php?title=POSIX_Threads&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle"><font><font>手机视图</font></font></a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="./POSIX主题 - 维基百科_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="维基媒体基金会"></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="./POSIX主题 - 维基百科_files/poweredby_mediawiki_88x31.png" alt="由MediaWiki技术支持" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.124","walltime":"0.161","ppvisitednodes":{"value":521,"limit":1000000},"ppgeneratednodes":{"value":0,"limit":1500000},"postexpandincludesize":{"value":34078,"limit":2097152},"templateargumentsize":{"value":53,"limit":2097152},"expansiondepth":{"value":6,"limit":40},"expensivefunctioncount":{"value":0,"limit":500},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%  110.283      1 -total"," 59.40%   65.513      1 Template:Reflist"," 49.15%   54.200      5 Template:Cite_web"," 25.19%   27.778      1 Template:Parallel_Computing"," 21.61%   23.831      1 Template:Navbox"," 15.03%   16.571      4 Template:Cite_book","  7.73%    8.530      1 Template:Category-inline","  6.04%    6.666      2 Template:Icon","  1.41%    1.550      1 Template:Column-width"]},"scribunto":{"limitreport-timeusage":{"value":"0.052","limit":"10.000"},"limitreport-memusage":{"value":2943814,"limit":52428800}},"cachereport":{"origin":"mw1182","timestamp":"20170715193942","ttl":2592000,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":63,"wgHostname":"mw1215"});});</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./POSIX主题 - 维基百科_files/translate_24dp.png" width="20" height="20" alt="Google 翻译"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">原文</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">提供更好的翻译建议</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><a accesskey="v" href="https://en.wikipedia.org/wiki/POSIX_Threads?action=edit" style="display: none;"></a><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
